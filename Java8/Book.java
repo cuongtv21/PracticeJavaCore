@@ -8,7 +8,6 @@ public class Book {
     private long estimatedReadingTime;
     private int pages;
     private int missingPages;
-    private Condition condition;
     private int starRating;
     private ISBN isbn;
 
@@ -20,7 +19,6 @@ public class Book {
         this.estimatedReadingTime = 0;
         this.pages = pages;
         this.missingPages = missingPages;
-        this.condition = BookStore.computeCondition(missingPages);
     }
 
     public String getTitle() {
@@ -71,14 +69,6 @@ public class Book {
         this.author = author;
     }
 
-    public Condition getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Condition condition) {
-        this.condition = condition;
-    }
-
     public int getPages() {
         return pages;
     }
@@ -107,7 +97,6 @@ public class Book {
                 ", price=" + price +
                 ", estimatedReadingTime=" + estimatedReadingTime +
                 ", missingPages=" + missingPages +
-                ", condition=" + condition +
                 ", starRating=" + starRating +
                 ", isbn=" + isbn +
                 '}';
